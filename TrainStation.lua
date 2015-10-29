@@ -71,6 +71,7 @@ function startupInitializer() --runs once on initial startup
   local cartInventory = tonumber( getFile( "cartInventory" ) )
   if cartWasLaunched then
     cartInventory = cartInventory - 1
+    rewriteFile( "cartInventory", cartInventory )
   end
   writeToWindow( w2, "..complete: "..cartInventory )
   --
